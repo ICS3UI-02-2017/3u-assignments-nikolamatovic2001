@@ -4,6 +4,11 @@
  */
 package Assignment_1;
 
+import becker.robots.City;
+import becker.robots.Direction;
+import becker.robots.Robot;
+import becker.robots.RobotSE;
+
 /**
  *
  * @author maton0870
@@ -14,6 +19,11 @@ public class A1Q1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        // Create a city
+        City nm = new City ();
+        
+        // Create a robot in the city
+        RobotSE rob = new RobotSE(nm, 0, 2, Direction.WEST);
     }
 }
