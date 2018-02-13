@@ -27,7 +27,7 @@ public class A1Q2 {
         // put a robot in nm
         RobotSE rob = new RobotSE(nm, 1, 2, Direction.SOUTH);
         
-        // create a wall in the city
+        // create a house in the city
         new Wall(nm, 1, 2, Direction.NORTH);
         new Wall(nm, 1, 2, Direction.EAST);
         new Wall(nm, 1, 2, Direction.SOUTH);
@@ -35,6 +35,8 @@ public class A1Q2 {
         new Wall(nm, 1, 1, Direction.WEST);
         new Wall(nm, 2, 1, Direction.WEST);
         new Wall(nm, 2, 1, Direction.SOUTH);
+       
+        // places a newspaper infront of the house
         new Thing(nm, 2, 2, Direction.EAST);
         
         // turn right once
@@ -55,7 +57,7 @@ public class A1Q2 {
         //move forward once
         rob.move();
         
-        // rob pickus up the thing
+        // rob picks up the newspaper
         rob.pickThing();
         
         // rob turns around
