@@ -4,6 +4,11 @@
  */
 package Examples;
 
+import becker.robots.City;
+import becker.robots.Direction;
+import becker.robots.RobotSE;
+import becker.robots.Wall;
+
 /**
  *
  * @author maton0870
@@ -15,6 +20,21 @@ public class ConditionsExample {
      */
     public static void main(String[] args) {
         
+        // Create a City for the Robot
+        City nm = new City();
         
+        // put a robot in nm
+        RobotSE rob = new RobotSE(nm, 2, 1, Direction.EAST);
+        
+        // create a wall infront of rob
+        new Wall(nm, 2, 5, Direction.EAST);
+        
+        while(rob.frontIsClear()){
+            rob.move();
+        }
+        rob.turnRight();
+        while(rob.frontIsClear()){
+            rob.move();
+        }
     }
 }
