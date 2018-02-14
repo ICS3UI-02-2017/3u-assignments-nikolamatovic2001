@@ -28,13 +28,20 @@ public class ConditionsExample {
         
         // create a wall infront of rob
         new Wall(nm, 2, 5, Direction.EAST);
+        new Wall(nm, 2, 2, Direction.NORTH);
+        new Wall(nm, 10, 5, Direction.SOUTH);
+        new Wall(nm, 10, 1, Direction.EAST);
         
+        
+        while(true){ 
+      
         while(rob.frontIsClear()){
             rob.move();
         }
-        rob.turnRight();
-        while(rob.frontIsClear()){
-            rob.move();
+        while(!rob.frontIsClear()){
+            rob.turnRight();
+            }
         }
     }
 }
+ 
