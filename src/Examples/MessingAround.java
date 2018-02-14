@@ -27,7 +27,13 @@ public class MessingAround {
         
         // put a robot in nm
         RobotSE jim = new RobotSE(nm, 2, 4, Direction.SOUTH);
-        
-        
+       
+        rob.setLabel("R");
+        jim.setLabel("J");
+     
+        while(rob.frontIsClear()){
+        rob.move();
+        jim.move();
+        }
             }
 }
