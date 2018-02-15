@@ -1,0 +1,25 @@
+
+
+Statement 1
+if(karel.canPickThing())                                    
+{                                                        
+    karel.turnRight();                               
+} else {                                                   
+    karel.turnLeft();                                
+}  
+
+
+
+Statement 2
+if(!karel.canPickThing())
+{                                                                          
+    karel.turnLeft();
+} else {                                                                                                                          
+    karel.turnRight();
+}   
+
+
+They are the same because the first statement states that if the condition is 
+true karel turns right and if its is false karel turns left. The second 
+statement states the opposite, if it is false turn left and if it is true turn 
+right.
