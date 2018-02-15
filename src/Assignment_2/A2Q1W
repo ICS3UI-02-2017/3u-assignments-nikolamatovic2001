@@ -1,0 +1,7 @@
+a) this.getAvenue() > 0
+b) this.getAvenue() <= 5
+c) this.getStreet() != 1
+d) !(this.getStreet() == 1)
+e) this.frontIsClear()
+f) !this.frontIsClear()
+g) this.frontIsClear() == false

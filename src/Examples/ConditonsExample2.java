@@ -32,21 +32,8 @@ public class ConditonsExample2 {
         new Thing (nm, 2, 2, Direction.EAST);
         new Thing (nm, 2, 4, Direction.EAST);
 
-         while(rob.frontIsClear()){
-         rob.move();
-         }  
-         rob.turnRight();
-       
-          if(rob.canPickThing()){
-           rob.pickThing();
+       rob.getAvenue();
+            
         }
-          if(rob.countThingsInBackpack() == 1){
-              rob.move();
-          }else if (rob.countThingsInBackpack() == 2){
-              rob.move(2);
-          }else if (rob.countThingsInBackpack() == 0) {
-              rob.turnLeft();
-              rob.move();
-          }
     }
 }
