@@ -24,28 +24,25 @@ public class A2Q3P {
         City nm = new City();
         
         // put a robot in nm
-        RobotSE rob = new RobotSE(nm, 6, 8, Direction.EAST);
+        RobotSE rob = new RobotSE(nm, 5, 5, Direction.EAST);
        
-        
+        while(!rob.isFacingNorth()){
+           rob.turnLeft();
+       }
+      
             while(rob.getStreet() != 0) {
-          
-            if(rob.getStreet() != 0){
-            rob.move();
-       
-            if(rob.getAvenue() != 0){
-            rob.move();
-            }else{
-                rob.turnLeft();
-            }
-            
-            if(rob.getStreet() == 20){
-                rob.turnRight();
-            }
-            if(rob.getAvenue() == 20){
-                rob.turnAround();
-            }
-     }
+             
+                if(rob.isFacingNorth()){
+                  rob.move();
+                          }
     }
-   }
-
-}
+             while(!rob.isFacingWest()){
+           rob.turnLeft();
+       }
+           
+             while(rob.getAvenue() != 0){
+          
+                if(rob.isFacingWest()){
+                  rob.move();
+                          }
+    }}}
