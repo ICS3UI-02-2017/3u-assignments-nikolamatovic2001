@@ -26,22 +26,27 @@ public class A2Q3P {
         // put a robot in nm
         RobotSE rob = new RobotSE(nm, 5, 5, Direction.EAST);
        
+        // if rob is not facing north turn left until he is 
         while(!rob.isFacingNorth()){
            rob.turnLeft();
        }
-      
+    
+        // if rob is not on street zero repeat this command
             while(rob.getStreet() != 0) {
              
+                // if rob is facing north move
                 if(rob.isFacingNorth()){
                   rob.move();
                           }
     }
+            //// if rob is not facing west turn left until he is 
              while(!rob.isFacingWest()){
            rob.turnLeft();
        }
-           
+           // if rob is not on avenue zero repeat this command
              while(rob.getAvenue() != 0){
-          
+         
+                 // if rob is facing west move
                 if(rob.isFacingWest()){
                   rob.move();
                           }
