@@ -27,23 +27,27 @@ public class A2Q4P {
         // put a guard in nm
         RobotSE rob = new RobotSE(nm, 0, 0, Direction.EAST);
         
-        // create Java's castle in the city
+        // create a tower in Java's castle in the city
         new Wall(nm, 1, 1, Direction.WEST);
         new Wall(nm, 1, 1, Direction.EAST);
         new Wall(nm, 1, 1, Direction.NORTH);
         new Wall(nm, 1, 1, Direction.SOUTH);
+        // create a tower in Java's castle in the city
         new Wall(nm, 1, 4, Direction.WEST);
         new Wall(nm, 1, 4, Direction.EAST);
         new Wall(nm, 1, 4, Direction.NORTH);
         new Wall(nm, 1, 4, Direction.SOUTH);
+        // create a tower in Java's castle in the city
         new Wall(nm, 4, 1, Direction.WEST);
         new Wall(nm, 4, 1, Direction.EAST);
         new Wall(nm, 4, 1, Direction.NORTH);
         new Wall(nm, 4, 1, Direction.SOUTH);
+        // create a tower in Java's castle in the city
         new Wall(nm, 4, 4, Direction.WEST);
         new Wall(nm, 4, 4, Direction.EAST);
         new Wall(nm, 4, 4, Direction.NORTH);
         new Wall(nm, 4, 4, Direction.SOUTH);
+        // create Java's castle in the city
         new Wall(nm, 2, 2, Direction.WEST);
         new Wall(nm, 2, 2, Direction.NORTH);
         new Wall(nm, 2, 3, Direction.EAST);
