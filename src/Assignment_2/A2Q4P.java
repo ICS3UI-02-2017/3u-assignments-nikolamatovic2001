@@ -21,7 +21,7 @@ public class A2Q4P {
      */
     public static void main(String[] args) {
        
-        // Create a City for the Robot
+        // create a castle for the guard
         City nm = new City();
         
         // put a guard in nm
@@ -57,27 +57,17 @@ public class A2Q4P {
         new Wall(nm, 3, 3, Direction.EAST);
         new Wall(nm, 3, 3, Direction.SOUTH);
         
-        //loops the command forever
+        // loops the command forever, the guard patrols the castle
         while(true){
-            //rob moves forward 2
         rob.move(2);
-            //rob turns right
         rob.turnRight();
-            //rob moves forward
         rob.move();
-            //rob turns left
         rob.turnLeft();
-            //rob moves forward
         rob.move();
-            //rob turns left
         rob.turnLeft();
-            //rob moves forward
         rob.move();
-            //rob turns right
         rob.turnRight();
-            //rob moves forward 2
         rob.move(2);
-            //rob turns right
         rob.turnRight();
            }
         }

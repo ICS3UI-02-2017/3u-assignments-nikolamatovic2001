@@ -39,7 +39,7 @@ public class A2Q3P {
                   rob.move();
                           }
     }
-            //// if rob is not facing west turn left until he is 
+            // if rob is not facing west turn left until he is 
              while(!rob.isFacingWest()){
            rob.turnLeft();
        }
@@ -49,5 +49,7 @@ public class A2Q3P {
                  // if rob is facing west move
                 if(rob.isFacingWest()){
                   rob.move();
-                          }
-    }}}
+                }
+             }
+        }
+    }

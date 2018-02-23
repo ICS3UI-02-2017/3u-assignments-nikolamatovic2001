@@ -54,7 +54,6 @@ public class A2Q1P {
         // rob will check to see if he has less the 7 things in his backpack
         if(rob.countThingsInBackpack() == 7){
             
-        //rob moves forward 3
         rob.move(3);
          
              }
