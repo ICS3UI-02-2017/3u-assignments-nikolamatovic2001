@@ -49,7 +49,7 @@ public class A2Q2P {
         //rob will stop on the finish line
         while(!rob.canPickThing()){
       
-        //if rob is not beside a wall he will turn right
+        //if rob is not beside the track he will turn right
             if(!rob.isBesideThing(IPredicate.aWall)){
             rob.turnRight(); 
             }
