@@ -13,7 +13,7 @@ import becker.robots.Wall;
  *
  * @author maton0870
  */
-public class A3Q4 {
+public class A3Q4Practice {
 
     /**
      * @param args the command line arguments
@@ -67,9 +67,8 @@ public class A3Q4 {
         for(int loopfirst = 0; loopfirst < 3; loopfirst++){
             rob.move(3);
             rob.turnLeft();
-            }
-        //loops around the next three blocks
-        for(int loopsecond = 0; loopsecond < 3; loopsecond++){
+            
+        for(int loopsecond = 0; loopsecond < 3; loopsecond++)
             rob.move(6);
             rob.turnLeft();
             rob.move(3);
@@ -77,6 +76,8 @@ public class A3Q4 {
             rob.move(3);
             rob.turnLeft();    
             }
+       
+            
         //moves to starting point
         rob.move(3);
     }
