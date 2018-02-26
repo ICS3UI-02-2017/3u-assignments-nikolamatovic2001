@@ -40,20 +40,17 @@ public class A3Q2 {
         
         //see the amount of thigns in a pile
         nm.showThingCounts(true);
-        
-        //set a loop variable
-        int loop = 0;
-        
+
         //loops 10 times
-        while(loop < 10){
+        for(int loop = 0; loop < 10; loop++){
             rob.pickThing();
             rob.move();
             rob.putThing();
             rob.turnAround();
             rob.move();
-            rob.turnAround();
-            loop += 1;
+            rob.turnAround(); 
         }
+       
         //moves on top of pile
         rob.move();
     }

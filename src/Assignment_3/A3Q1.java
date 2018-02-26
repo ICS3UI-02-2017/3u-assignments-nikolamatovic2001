@@ -36,11 +36,8 @@ public class A3Q1 {
         new Wall(nm, 2, 2, Direction.SOUTH);
         new Wall(nm, 2, 2, Direction.EAST);
         
-        //set loop equal to 2 for the robot
-        int loop = 0;
-        
         //loops the command twice
-        while(loop < 2){
+        for(int loop = 0; loop < 2; loop++){
         //rob moves around the square
             rob.move(2);
             rob.turnLeft();
@@ -51,7 +48,6 @@ public class A3Q1 {
             rob.move(3);
             rob.turnLeft();
             rob.move();
-            loop += 1;
         }
     }
 }
