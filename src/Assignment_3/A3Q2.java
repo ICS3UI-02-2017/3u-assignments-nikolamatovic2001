@@ -50,7 +50,6 @@ public class A3Q2 {
             rob.move();
             rob.turnAround(); 
         }
-       
         //moves on top of pile
         rob.move();
     }

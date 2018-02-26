@@ -63,10 +63,12 @@ public class A3Q4 {
         new Wall (nm, 5, 5, Direction.SOUTH);
         new Wall (nm, 5, 5, Direction.EAST);
         
+        //loops around the first block
         for(int loopfirst = 0; loopfirst < 3; loopfirst++){
             rob.move(3);
             rob.turnLeft();
             }
+        //loops around the next three blocks
         for(int loopsecond = 0; loopsecond < 3; loopsecond++){
             rob.move(6);
             rob.turnLeft();
@@ -75,6 +77,7 @@ public class A3Q4 {
             rob.move(3);
             rob.turnLeft();    
             }
+        //mves to starting point
         rob.move(3);
     }
 }
