@@ -62,5 +62,10 @@ public class A3Q4 {
         new Wall (nm, 5, 4, Direction.SOUTH);
         new Wall (nm, 5, 5, Direction.SOUTH);
         new Wall (nm, 5, 5, Direction.EAST);
+        
+        for(int loopfirst = 0; loopfirst > 0; loopfirst++){
+            rob.move(3);
+            rob.turnLeft();
+        }
     }
 }
