@@ -36,13 +36,9 @@ public class A3Q1 {
         new Wall(nm, 2, 2, Direction.SOUTH);
         new Wall(nm, 2, 2, Direction.EAST);
         
-        //loops the command twice, rob moves around the square
-        for(int loop = 0; loop < 2; loop++){
+        //loops the command four times, rob moves around the square
+        for(int loop = 0; loop < 4; loop++){
             rob.move(2);
-            rob.turnLeft();
-            rob.move(3);
-            rob.turnLeft();
-            rob.move(3);
             rob.turnLeft();
             rob.move(3);
             rob.turnLeft();
