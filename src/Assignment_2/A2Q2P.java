@@ -49,7 +49,7 @@ public class A2Q2P {
         //rob will stop on the finish line
         while(!rob.canPickThing()){
       
-        //if rob is not beside the track he will turn right
+        //if rob is not beside the track he will do the command
             if(!rob.isBesideThing(IPredicate.aWall)){
             rob.turnRight(); 
             }
@@ -58,7 +58,7 @@ public class A2Q2P {
             if(rob.frontIsClear()){
             rob.move();
        
-       //if the front is not clear he turns left
+       //if the front is not clear he follows the command
             }else{
             rob.turnLeft();
            } 
