@@ -64,7 +64,7 @@ public class A3Q4Practice {
         new Wall (nm, 5, 5, Direction.EAST);
         
         //goes around all 4 blocks
-        for(int loo = 0; loo < 4; loo++){
+        for(int loop = 0; loop < 4; loop++){
             rob.move(3);
             rob.turnLeft();
             rob.move(3);
