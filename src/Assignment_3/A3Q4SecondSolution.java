@@ -65,7 +65,7 @@ public class A3Q4SecondSolution {
         
         //goes around all 4 blocks
         for(int loop = 0; loop < 4; loop++){
-           for(int loop2 = 0; loop2 < 3; loop2 ++){
+           for(int loopmini = 0; loopmini < 3; loopmini ++){
                rob.move(3);
                rob.turnLeft();
            }
