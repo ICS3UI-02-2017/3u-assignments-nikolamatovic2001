@@ -23,8 +23,8 @@ public class Challenge {
         City nm = new City();
         
         // put a robot in nm
-        RobotSE rob1 = new RobotSE(nm, 0, 3, Direction.EAST);
-        RobotSE rob2 = new RobotSE(nm, 0, 3, Direction.EAST);
+        RobotSE rob1 = new RobotSE(nm, 0, 3, Direction.SOUTH);
+        RobotSE rob2 = new RobotSE(nm, 0, 3, Direction.SOUTH);
         
         
     }
