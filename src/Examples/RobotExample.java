@@ -72,7 +72,5 @@ public class RobotExample {
         
         // makes the robot move forward two spaces
         rob.move(2);
-        
-        
-                }
+  }
 }
