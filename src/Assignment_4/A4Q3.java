@@ -20,5 +20,12 @@ public class A4Q3 {
         System.out.println("Please enter in 4 numbers on seperate lines:");
         Scanner input = new Scanner(System.in);
         String one = input.nextLine();
+        String two = input.nextLine();
+        String three = input.nextLine();
+        String four = input.nextLine();
+        System.out.print("Your numbers were " + one + ", ");
+        System.out.print( two + ", ");
+        System.out.print( three + ", and ");
+        System.out.print(four);
     }
 }
