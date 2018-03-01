@@ -60,7 +60,7 @@ public class InputAndOutput {
         System.out.println("Please enter your name:");
         // use a Scanner to read info
         Scanner input = new Scanner(System.in);
-        //string is used to store words 
+        // string is used to store words 
         String name = input.nextLine();
         // say hello
         System.out.println("Hello " + name +".");
