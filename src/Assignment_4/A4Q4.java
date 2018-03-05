@@ -16,7 +16,8 @@ public class A4Q4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+       
+        // asks to put the cost of all the items
         Scanner input = new Scanner(System.in);
         System.out.print("How much does the food for the prom cost? : ");
         int addone = input.nextInt();
@@ -30,12 +31,12 @@ public class A4Q4 {
         int addfive = input.nextInt();
         System.out.print("How much for miscellaneous costs? : ");
         int addsix = input.nextInt();
-         
-        int total = addone + addtwo + addthree + addfour + addfive + addsix;
+        
+        // gives the total and the amount of tickets needed to be sold
+        double total = addone + addtwo + addthree + addfour + addfive + addsix;
         System.out.print("The total cost is " + total + ". ");
-        int div = total/35;
-        Math.ceil(div);
-        System.out.println("You will need to sell " + div + " tickets to break even.");
-        Math.ceil(div);
+        double div = total/35.0;
+        double round = Math.ceil(div);
+        System.out.println("You will need to sell " + round + " tickets to break even.");
     }
 }

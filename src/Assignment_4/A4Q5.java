@@ -16,42 +16,45 @@ public class A4Q5 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+    
+    // write your name
     Scanner input = new Scanner(System.in);
     System.out.print("Please enter your name: ");
     String name = input.nextLine();
     System.out.println();
-
+    
+    // put marks and what the test was out of
     System.out.print("What was the first test out of?: ");
     double first = input.nextDouble();
     System.out.print("What mark did you get?: ");
     double firstmark = input.nextDouble();
     System.out.println();
-
+    
     System.out.print("What was the second test out of?: ");
     double second = input.nextDouble();
     System.out.print("What mark did you get?: ");
     double secondmark = input.nextDouble();
     System.out.println();
-
+    
     System.out.print("What was the third test out of?: ");
     double third = input.nextDouble();
     System.out.print("What mark did you get?: ");
     double thirdmark = input.nextDouble();
     System.out.println();
-
+   
     System.out.print("What was the fourth test out of?: ");
     double fourth = input.nextDouble();
     System.out.print("What mark did you get?: ");
     double fourthmark = input.nextDouble();
     System.out.println();
-
+  
     System.out.print("What was the fifth test out of?: ");
     double fifth = input.nextDouble();
     System.out.print("What mark did you get?: ");
     double fifthmark = input.nextDouble();
     System.out.println();
-
+    
+    // tells all the mark percentages and gives an average
     System.out.println("Test scores for " + name);
     double perfirst = firstmark/first;
     System.out.println("Test 1: " + perfirst + "%");
