@@ -191,10 +191,10 @@ public class A4Q9 extends javax.swing.JFrame {
 //Does Divison
     private void divActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divActionPerformed
      String oneDiv = numberOne.getText();
-     int oneD = Integer.parseInt(oneDiv);
+     double oneD = Double.parseDouble(oneDiv);
      String twoDiv = numberTwo.getText();
-     int twoD = Integer.parseInt(twoDiv);
-     int totalAddD = oneD / twoD;
+     double twoD = Double.parseDouble(twoDiv);
+     double totalAddD = oneD / twoD;
      results.setText("" + totalAddD);
     }//GEN-LAST:event_divActionPerformed
 
