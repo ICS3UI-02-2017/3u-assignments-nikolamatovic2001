@@ -22,9 +22,9 @@ public class A4Q6 {
         System.out.print("Enter the speed limit: ");
         int limit = input.nextInt();
         System.out.print("Enter the recorded speed of the car: ");
+        int speed = input.nextInt();
         
         // sets variables for speeding
-        int speed = input.nextInt();
         int fineOne = speed; 
         int fineTwo = speed;
         int fineThree = speed;
