@@ -161,7 +161,7 @@ public class A4Q9 extends javax.swing.JFrame {
     private void resultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultsActionPerformed
         
     }//GEN-LAST:event_resultsActionPerformed
-
+//Does addition
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
      String oneAdd = numberOne.getText();
      int oneA = Integer.parseInt(oneAdd);
@@ -170,7 +170,7 @@ public class A4Q9 extends javax.swing.JFrame {
      int totalAddA = oneA + twoA;
      results.setText("" + totalAddA);
     }//GEN-LAST:event_addActionPerformed
-
+// Does subtraction
     private void subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subActionPerformed
      String oneSub = numberOne.getText();
      int oneS = Integer.parseInt(oneSub);
@@ -179,7 +179,7 @@ public class A4Q9 extends javax.swing.JFrame {
      int totalAddS = oneS - twoS;
      results.setText("" + totalAddS);
     }//GEN-LAST:event_subActionPerformed
-
+//Does Multiplication
     private void mulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mulActionPerformed
      String oneMul = numberOne.getText();
      int oneM = Integer.parseInt(oneMul);
@@ -188,7 +188,7 @@ public class A4Q9 extends javax.swing.JFrame {
      int totalAddM = oneM * twoM;
      results.setText("" + totalAddM);
     }//GEN-LAST:event_mulActionPerformed
-
+//Does Divison
     private void divActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divActionPerformed
      String oneDiv = numberOne.getText();
      int oneD = Integer.parseInt(oneDiv);
