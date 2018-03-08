@@ -28,12 +28,43 @@ public class A4Q10 extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        fah = new javax.swing.JTextField();
+        cel = new javax.swing.JTextField();
+        buttonFC = new javax.swing.JButton();
+        buttonCF = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tempature Converter");
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Degrees Fahrenheit");
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText("Degrees Celsius");
+
+        fah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fahActionPerformed(evt);
+            }
+        });
+
+        cel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                celActionPerformed(evt);
+            }
+        });
+
+        buttonFC.setText("F -> C");
+        buttonFC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonFCActionPerformed(evt);
+            }
+        });
+
+        buttonCF.setText("C -> F");
+        buttonCF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCFActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -42,22 +73,60 @@ public class A4Q10 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(77, 77, 77)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addContainerGap(289, Short.MAX_VALUE))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(fah, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                    .addComponent(cel))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonFC)
+                    .addComponent(buttonCF))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jLabel1)
+                .addGap(100, 100, 100)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(fah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonFC))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(cel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonCF))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void celActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_celActionPerformed
+
+    private void fahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fahActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fahActionPerformed
+    // converts fahrenheit to celsius
+    private void buttonFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFCActionPerformed
+        String numberCel = fah.getText();
+        double numCel = Double.parseDouble(numberCel);
+        double totalCelOne = numCel - 32;
+        double totalCelTwo = totalCelOne * 5/9;
+        cel.setText("" + totalCelTwo);
+    }//GEN-LAST:event_buttonFCActionPerformed
+    // converts celsius to fahrenheit
+    private void buttonCFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCFActionPerformed
+       String numberFah = cel.getText();
+        double numFah = Double.parseDouble(numberFah);
+        double totalFahOne = numFah * 9/5;
+        double totalFahTwo = totalFahOne + 32;
+        fah.setText("" + totalFahTwo);
+    }//GEN-LAST:event_buttonCFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,6 +163,10 @@ public class A4Q10 extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonCF;
+    private javax.swing.JButton buttonFC;
+    private javax.swing.JTextField cel;
+    private javax.swing.JTextField fah;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
