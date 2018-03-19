@@ -17,11 +17,6 @@ public class A5Q1 {
      */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Please put your sentence in English: ");
-
-        String sentence = input.nextLine();
-        System.out.print("Sentence in Ubbi Dubbi: ");
-        System.out.println(sentence.replaceAll("a", "uba"));
-        
+       
     }
 }
