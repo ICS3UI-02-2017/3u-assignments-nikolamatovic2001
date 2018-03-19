@@ -76,7 +76,6 @@ public class A4Q8 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldActionPerformed
- 
     }//GEN-LAST:event_textFieldActionPerformed
 // Asks for name and says hello and your name in the label 
     private void buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActionPerformed

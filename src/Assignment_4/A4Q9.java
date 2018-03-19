@@ -151,51 +151,48 @@ public class A4Q9 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void numberOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberOneActionPerformed
-    
     }//GEN-LAST:event_numberOneActionPerformed
 
     private void numberTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberTwoActionPerformed
-       
     }//GEN-LAST:event_numberTwoActionPerformed
 
     private void resultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultsActionPerformed
-        
     }//GEN-LAST:event_resultsActionPerformed
 //Does addition
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-     String oneAdd = numberOne.getText();
-     int oneA = Integer.parseInt(oneAdd);
-     String twoAdd = numberTwo.getText();
-     int twoA = Integer.parseInt(twoAdd);
-     int totalAddA = oneA + twoA;
-     results.setText("" + totalAddA);
+        String oneAdd = numberOne.getText();
+        int oneA = Integer.parseInt(oneAdd);
+        String twoAdd = numberTwo.getText();
+        int twoA = Integer.parseInt(twoAdd);
+        int totalAddA = oneA + twoA;
+        results.setText("" + totalAddA);
     }//GEN-LAST:event_addActionPerformed
 // Does subtraction
     private void subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subActionPerformed
-     String oneSub = numberOne.getText();
-     int oneS = Integer.parseInt(oneSub);
-     String twoSub = numberTwo.getText();
-     int twoS = Integer.parseInt(twoSub);
-     int totalAddS = oneS - twoS;
-     results.setText("" + totalAddS);
+        String oneSub = numberOne.getText();
+        int oneS = Integer.parseInt(oneSub);
+        String twoSub = numberTwo.getText();
+        int twoS = Integer.parseInt(twoSub);
+        int totalAddS = oneS - twoS;
+        results.setText("" + totalAddS);
     }//GEN-LAST:event_subActionPerformed
 //Does Multiplication
     private void mulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mulActionPerformed
-     String oneMul = numberOne.getText();
-     int oneM = Integer.parseInt(oneMul);
-     String twoMul = numberTwo.getText();
-     int twoM = Integer.parseInt(twoMul);
-     int totalAddM = oneM * twoM;
-     results.setText("" + totalAddM);
+        String oneMul = numberOne.getText();
+        int oneM = Integer.parseInt(oneMul);
+        String twoMul = numberTwo.getText();
+        int twoM = Integer.parseInt(twoMul);
+        int totalAddM = oneM * twoM;
+        results.setText("" + totalAddM);
     }//GEN-LAST:event_mulActionPerformed
 //Does Divison
     private void divActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divActionPerformed
-     String oneDiv = numberOne.getText();
-     double oneD = Double.parseDouble(oneDiv);
-     String twoDiv = numberTwo.getText();
-     double twoD = Double.parseDouble(twoDiv);
-     double totalAddD = oneD / twoD;
-     results.setText("" + totalAddD);
+        String oneDiv = numberOne.getText();
+        double oneD = Double.parseDouble(oneDiv);
+        String twoDiv = numberTwo.getText();
+        double twoD = Double.parseDouble(twoDiv);
+        double totalAddD = oneD / twoD;
+        results.setText("" + totalAddD);
     }//GEN-LAST:event_divActionPerformed
 
     /**

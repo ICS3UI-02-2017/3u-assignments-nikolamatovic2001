@@ -28,10 +28,10 @@ public class A4Q7 {
             if (sum < 2 || sum > 12) {
                 System.out.println("You Quit");
                 System.exit(sum);
-               
+
             } else {
                 finish = sum + finish;
-               // all the snakes and ladders
+                // all the snakes and ladders
                 if (finish == 54) {
                     finish = 19;
                 }

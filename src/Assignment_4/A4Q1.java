@@ -16,7 +16,7 @@ public class A4Q1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         // program ask for your name
         System.out.print("Please enter your name: ");
         Scanner input = new Scanner(System.in);

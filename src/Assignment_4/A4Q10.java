@@ -116,14 +116,14 @@ public class A4Q10 extends javax.swing.JFrame {
         String numberCel = fah.getText();
         double numCel = Double.parseDouble(numberCel);
         double totalCelOne = numCel - 32;
-        double totalCelTwo = totalCelOne * 5/9;
+        double totalCelTwo = totalCelOne * 5 / 9;
         cel.setText("" + totalCelTwo);
     }//GEN-LAST:event_buttonFCActionPerformed
     // converts celsius to fahrenheit
     private void buttonCFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCFActionPerformed
-       String numberFah = cel.getText();
+        String numberFah = cel.getText();
         double numFah = Double.parseDouble(numberFah);
-        double totalFahOne = numFah * 9/5;
+        double totalFahOne = numFah * 9 / 5;
         double totalFahTwo = totalFahOne + 32;
         fah.setText("" + totalFahTwo);
     }//GEN-LAST:event_buttonCFActionPerformed

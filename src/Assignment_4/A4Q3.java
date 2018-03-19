@@ -24,8 +24,8 @@ public class A4Q3 {
         String three = input.nextLine();
         String four = input.nextLine();
         System.out.print("Your numbers were " + one + ", ");
-        System.out.print( two + ", ");
-        System.out.print( three + ", and ");
+        System.out.print(two + ", ");
+        System.out.print(three + ", and ");
         System.out.print(four);
     }
 }
