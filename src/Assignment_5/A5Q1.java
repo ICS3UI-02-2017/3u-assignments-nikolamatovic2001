@@ -18,61 +18,49 @@ public class A5Q1 {
     public static void main(String[] args) {
 
         while (true) {
+            // asks to put english sentence to be translated
             Scanner input = new Scanner(System.in);
             System.out.println("Write your sentence in English: ");
             String sent = input.nextLine();
 
-            //puts all in lowercase 9sanitize it
+            //puts all letters in lowercase (sanitizes it)
             sent = sent.toLowerCase();
 
-            int length = sent.length();
-            for (int i = 0; i < length; i++) {
-                if (sent.charAt(i) == 'a'
-                        || sent.charAt(i) == 'e'
-                        || sent.charAt(i) == 'i'
-                        || sent.charAt(i) == 'o'
-                        || sent.charAt(i) == 'u') {
-                    sent = sent.replace("u", "ubu");
-                    sent = sent.replace("a", "uba");
-                    sent = sent.replace("e", "ube");
-                    sent = sent.replace("i", "ubi");
-                    sent = sent.replace("o", "ubo");
-                }
+            // translates your sentence to Ubbi Dubbi
+            if (sent.contains("u")) {
+                sent = sent.replace("u", "ubu");
             }
-        }
-        // if (sent.contains("eau")) {
-        //   sent = sent.substring(0);
+            if (sent.contains("a")) {
+                sent = sent.replace("a", "uba");
+            }
+            if (sent.contains("i")) {
+                sent = sent.replace("i", "ubi");
+            }
+            if (sent.contains("e")) {
+                sent = sent.replace("e", "ube");
+            }
+            if (sent.contains("o")) {
+                sent = sent.replace("o", "ubo");
+            }
+            if (sent.contains("uboubo")) {
+                sent = sent.replace("uboubo", "uboo");
+            }
+            if (sent.contains("ubeubaubu")) {
+                sent = sent.replace("ubeubaubu", "ubeau");
+            }
+            if (sent.contains("ubiube")) {
+                sent = sent.replace("ubiube", "ubie");
+            }
+            if (sent.contains("uboubu")) {
+                sent = sent.replace("uboubu", "ubou");
+            }
+            if (sent.contains("ubaube")) {
+                sent = sent.replace("ubaube", "ubae");
+            }
 
-        //}
-        //if (sent.contains("oo")) {
-        //     sent = sent.replace("oo", "uboo");
-        // }
-        //  if (sent.contains("ie")) {
-        //      sent = sent.replace("ie", "ubie");
-        //  }
-        //  if (sent.contains("ubeau")) {     
-        //   }
-        //  if (sent.contains("uboo")) {
-        //       String s = sent.substring(0);
-        //   }
-        //   if (sent.contains("ubie")) {
-        //       String t = sent.substring(0);
-        //   }
-        //   if (sent.contains("u")) {
-        //       sent = sent.replace("u", "ubu");
-        //   }
-        //   if (sent.contains("a")) {
-        //      sent = sent.replace("a", "uba");
-        //  }
-        //  if (sent.contains("i")) {
-        //      sent = sent.replace("i", "ubi");
-        //  }
-        //  if (sent.contains("e")) {
-        //      sent = sent.replace("e", "ube");
-        //  }
-        //  if (sent.contains("o")) {
-        //      sent = sent.replace("o", "ubo");
-        //  }  
-        System.out.println(sent);
+            // prints sentence in Ubbi Dubbi
+            System.out.println("Here is your sentence in Ubbi Dubnbi: ");
+            System.out.println(sent);
+        }
     }
 }
