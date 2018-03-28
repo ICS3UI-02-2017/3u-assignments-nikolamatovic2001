@@ -57,9 +57,19 @@ public class A5Q1 {
             if (sent.contains("ubaube")) {
                 sent = sent.replace("ubaube", "ubae");
             }
+            if (sent.contains("ubuubeubuube")) {
+                sent = sent.replace("ubuubeubuube", "ubueue");
+            }
+            if (sent.contains("ubuubeubuubeubi")) {
+                sent = sent.replace("ubuubeubuubeubi", "ubueuei");
+            }
+            if (sent.contains("ubuubeubuubi")) {
+                sent = sent.replace("ubuubeubuubi", "ubueui");
+            }
+
 
             // prints sentence in Ubbi Dubbi
-            System.out.println("Here is your sentence in Ubbi Dubnbi: ");
+            System.out.println("Here is your sentence in Ubbi Dubbi: ");
             System.out.println(sent);
         }
     }
