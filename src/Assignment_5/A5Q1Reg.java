@@ -15,6 +15,7 @@ public class A5Q1Reg {
     public static void main(String[] args) {
 
         while (true) {
+            //Write your sentence in English
             Scanner input = new Scanner(System.in);
             System.out.println("Write your sentence in English: ");
             String sent = input.nextLine();
