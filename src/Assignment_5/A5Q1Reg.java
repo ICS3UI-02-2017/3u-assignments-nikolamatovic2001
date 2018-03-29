@@ -1,5 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
+/* To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package Assignment_5;
@@ -22,7 +21,7 @@ public class A5Q1Reg {
 
             //Adds ub before a vowel or string of vowels 
             System.out.println("Here is your sentence in Ubbi Dubbi: ");
-            System.out.println(sent.replaceAll("(?i)(a|e|i|o|u|A|E|I|O|U)+", "ub$0"));
+            System.out.println(sent.replaceAll("(?)(a|e|i|o|u|A|E|I|O|U)+", "ub$0"));
             System.out.println();
         }
     }
