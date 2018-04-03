@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author maton0870
  */
-public class A5Q1 {
+public class A5Q1UseRegex {
 
     /**
      * @param args the command line arguments
