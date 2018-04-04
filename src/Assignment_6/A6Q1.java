@@ -30,8 +30,9 @@ public class A6Q1 {
             double mark = input.nextDouble();
             sum = sum + mark + marks[i];
         }
-        // Calculates the average
+        // Calculates the average and rounds it to two decimal places
         double average = sum / student;
-        System.out.println("The class average is " + average + "%");
+        double averageRound = Math.round(average*100.0)/100.0;
+        System.out.println("The class average is " + averageRound + "%");
     }
 }
