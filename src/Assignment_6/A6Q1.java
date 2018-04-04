@@ -32,7 +32,7 @@ public class A6Q1 {
         }
         // Calculates the average and rounds it to two decimal places
         double average = sum / student;
-        double averageRound = Math.round(average*100.0)/100.0;
+        double averageRound = Math.round(average * 100.0) / 100.0;
         System.out.println("The class average is " + averageRound + "%");
     }
 }
