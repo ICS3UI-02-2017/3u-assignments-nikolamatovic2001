@@ -26,13 +26,13 @@ public class A6Q3 {
             sort[i] = num;
         }
         // Sorts the numbers in ascending order
-        for (int i = 0; i < sort.length; i++) {
-            if (sort[i] < sort[i + 1]) {
-                System.out.println("The integers in ascending order are: " + sort[i] + " " + sort[i + 1]);
-            } else {
-                System.out.println("The integers in ascending order are: " + sort[i + 1] + " " + sort[i]);
-            }
-            break;
+        if (sort[0] < sort[1]) {
+            int store = sort[0];
+            sort[0] = sort[1];
+            sort[1] = store;
+            System.out.println("The integers in ascending order are: " + sort[1] + " " + sort[0]);
+        } else {
+            System.out.println("The integers in ascending order are: " + sort[1] + " " + sort[0]);
         }
     }
 }

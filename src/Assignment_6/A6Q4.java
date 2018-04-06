@@ -27,9 +27,11 @@ public class A6Q4 {
             sort[i] = num;
         }
         for (int i = 0; i < sort.length; i++) {
-            if (sort[i] < sort[i + 1]) {              
-               
-                System.out.print(sort[i]);
+            if (sort[i] < sort[i + 1]) {
+                int store = sort[i];
+                sort[i]= sort[i+1];
+                sort[i+1] = store;
+                System.out.print(sort[i] + " " + sort[i+1]);
             }
         }
     }
