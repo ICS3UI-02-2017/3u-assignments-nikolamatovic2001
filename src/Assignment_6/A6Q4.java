@@ -17,22 +17,24 @@ public class A6Q4 {
      */
     public static void main(String[] args) {
 
-        //
         Scanner input = new Scanner(System.in);
         System.out.println("Please input the 10 marks down below; ");
-
-        int[] sort = new int[10];
-        for (int i = 0; i < sort.length; i++) {
+        
+        int [] nonSort = new int[9];
+        int[] sort = new int[9];
+        int store;
+        
+        for (int y = 0; y <= nonSort.length; y++) {
             int num = input.nextInt();
-            sort[i] = num;
+            for (int x = y+1; x < nonSort.length; x++) {
+                if (sort[y] > sort[x]) {
+                    store = nonSort[y];
+                    nonSort[y] = nonSort[x];
+                    nonSort[x] = store;
+                    sort = nonSort;
+                }
+            } 
         }
-        for (int i = 0; i < sort.length; i++) {
-            if (sort[i] < sort[i + 1]) {
-                int store = sort[i];
-                sort[i]= sort[i+1];
-                sort[i+1] = store;
-                System.out.print(sort[i] + " " + sort[i+1]);
-            }
-        }
+        System.out.println("here " + sort);
     }
 }
