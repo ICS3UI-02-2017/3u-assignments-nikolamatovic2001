@@ -19,22 +19,21 @@ public class A6Q4 {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Please input the 10 marks down below; ");
-        
-        int [] nonSort = new int[9];
-        int[] sort = new int[9];
-        int store;
-        
-        for (int y = 0; y <= nonSort.length; y++) {
+
+        int[] sort = new int[10];
+
+        for (int x = 0; x < sort.length - 1; x++) {
             int num = input.nextInt();
-            for (int x = y+1; x < nonSort.length; x++) {
-                if (sort[y] > sort[x]) {
-                    store = nonSort[y];
-                    nonSort[y] = nonSort[x];
-                    nonSort[x] = store;
-                    sort = nonSort;
+            sort[x] = num;
+
+            for (int y = x + 1; y < sort.length; y++) {
+                if (sort[x] > sort[y]) {
+                    int store = sort[x];
+                    sort[x] = sort[y];
+                    sort[y] = store;
                 }
-            } 
+                System.out.print(sort[x]);
+            }
         }
-        System.out.println("here " + sort);
     }
 }
