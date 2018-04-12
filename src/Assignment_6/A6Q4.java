@@ -41,6 +41,6 @@ public class A6Q4 {
             }
         }
         //Outputs the numbers 
-        System.out.print(Arrays.toString(sort));
+        System.out.print("Here are your numbers in ascending order: " + Arrays.toString(sort));
     }
 }
