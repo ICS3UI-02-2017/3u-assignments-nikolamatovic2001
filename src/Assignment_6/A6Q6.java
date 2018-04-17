@@ -50,10 +50,8 @@ public class A6Q6 {
         int store = 0;
         for (int z = 0; z < marks.length; z++) {
             store = store + marks[z];
-            if (z == marks.length - 1) {
-                int average = store / arraySize;
-                System.out.println("Here is the average of the class: " + average);
-            }
         }
+        int average = store / arraySize;
+        System.out.println("Here is the average of the class: " + average);
     }
 }
