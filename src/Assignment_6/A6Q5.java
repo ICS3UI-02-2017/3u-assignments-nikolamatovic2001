@@ -17,13 +17,13 @@ public class A6Q5 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
+
         //Asks the user to input the amount of numbers and the actual numbers
         Scanner input = new Scanner(System.in);
         System.out.print("How many numbers are you sorting: ");
         int arraySize = input.nextInt();
         System.out.println("Please input your " + arraySize + " numbers down below:");
-        
+
         //Creates an int array dependening on the size inputted above
         int[] sort = new int[arraySize];
 
@@ -44,19 +44,21 @@ public class A6Q5 {
         }
         //Outputs the numbers 
         System.out.println("Here are your numbers in ascending order: " + Arrays.toString(sort));
-      
-        if(arraySize%2 == 0){           
-             double medOddHigh = arraySize/2 + 1;
-             double High = sort[(int)medOddHigh];
-             double medOddLow = arraySize/2;   
-             double Low = sort[(int)medOddLow];
-             double medOddTemp = High + Low;
-             double Odd = medOddTemp/2;
-             System.out.print("Here is the median: " + Odd);       
-        }else{
-            int medEven = arraySize/2;
-            int Even = sort[medEven];
+
+        //if the is even get the median of the nubmers in the middle
+        if (arraySize % 2 == 0) {
+            double medEvenHigh = arraySize / 2 - 1;
+            double High = sort[(int) medEvenHigh];
+            double medEvenLow = arraySize / 2;
+            double Low = sort[(int) medEvenLow];
+            double medEvenTemp = High + Low;
+            double Even = medEvenTemp / 2;
             System.out.print("Here is the median: " + Even);
-        }       
+        } else {
+            //if the array is odd get the number in the middle position
+            int medOdd = arraySize / 2;
+            int Odd = sort[medOdd];
+            System.out.print("Here is the median: " + Odd);
+        }
     }
 }
