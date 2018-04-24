@@ -23,7 +23,7 @@ public class A6Q7 {
             prime[i] = true;
         }
         for (int n = 2; n * n <= 1000; n++) {
-            //if prime[p] is not changed, it is a prime number
+            //If prime[p] is not changed, it is a prime number
             if (prime[n] == true) {
                 //If prime[p] is changed, it is not a prime number
                 for (int i = n * 2; i < 1000; i += n) {
