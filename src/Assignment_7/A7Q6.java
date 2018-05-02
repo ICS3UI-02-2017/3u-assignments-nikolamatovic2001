@@ -19,7 +19,7 @@ public class A7Q6 {
         //Finds the last digit, positive
         int last = 0;
         for (int i = 0; i < 10; i++) {
-            if (lastNum % 10 == i) {
+            if (lastNum % 10 == i || lastNum % -10 == i) {
                 last = i;
             }
         }

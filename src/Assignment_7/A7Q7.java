@@ -17,25 +17,25 @@ public class A7Q7 {
      */
     public static int firstDigit(int firstNum) {
         //Finds the first positive digit
-        int last = 0;
+        int first = 0;
         while (firstNum >= 10) {
             firstNum = firstNum / 10;
-            last = firstNum;
+            first = firstNum;
         }
         //Finds the first negaitive digit
         while (firstNum <= -10) {
             firstNum = firstNum / 10;
-            last = firstNum * -1;
+            first = firstNum * -1;
         }
         //Returns the first digit
-        return last;
+        return first;
     }
 
     public static void main(String[] args) {
         //Prints out the first digit
         Scanner input = new Scanner(System.in);
         System.out.print("Please type out your number: ");
-        int first = firstDigit(input.nextInt());
-        System.out.println("Your first number is: " + first);
+        int firstNumber = firstDigit(input.nextInt());
+        System.out.println("Your first number is: " + firstNumber);
     }
 }
