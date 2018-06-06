@@ -5,6 +5,8 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -18,36 +20,48 @@ import javax.swing.Timer;
  *
  * @author maton0870
  */
-public class DrawingExample extends JComponent implements ActionListener {
+public class PongExample extends JComponent implements ActionListener {
 
     // Height and Width of our game
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
+
     //Title of the window
     String title = "My Game";
+
     // sets the framerate and delay for our game
     // this calculates the number of milliseconds per frame
     // you just need to select an approproate framerate
     int desiredFPS = 60;
     int desiredTime = Math.round((1000 / desiredFPS));
+    
     // timer used to run the game loop
     // this is what keeps our time running smoothly :)
     Timer gameTimer;
-    // YOUR GAME VARIABLES WOULD GO HERE
-    int pacmanY = 20;
-    //Creates a custom colour (rgb)
-    Color purple = new Color(143, 71, 237);
-    //Mouse controls
-    int mouseX = 0;
-    int mouseY = 0;
-    //Keyboard Controls
-    boolean moveUp = false;
-    boolean moveDown = false;
 
+    // YOUR GAME VARIABLES WOULD GO HERE
+    Rectangle paddel1 = new Rectangle(50, 250, 25, 100);
+    Rectangle paddel2 = new Rectangle(725, 250, 25, 100);
+    
+    Rectangle ball = new Rectangle(395, 295, 10, 10);
+    
+    int ballAngle = 45;
+    int ballSpeed = 3;
+    
+    //Draw a score
+    int score1 = 0;
+    int score2 = 0;
+    
+    // create a custom font
+    Font biggerFont = new Font("Comic Sans MS", Font.BOLD, 50);
+    
+    
     // GAME VARIABLES END HERE    
+
+    
     // Constructor to create the Frame and place the panel in
     // You will learn more about this in Grade 12 :)
-    public DrawingExample() {
+    public PongExample(){
         // creates a windows to show my game
         JFrame frame = new JFrame(title);
 
@@ -69,9 +83,8 @@ public class DrawingExample extends JComponent implements ActionListener {
         this.addMouseMotionListener(m);
         this.addMouseWheelListener(m);
         this.addMouseListener(m);
-
-        //Sets the game loop
-        gameTimer = new Timer(desiredTime, this);
+        
+        gameTimer = new Timer(desiredTime,this);
         gameTimer.setRepeats(true);
         gameTimer.start();
     }
@@ -84,33 +97,20 @@ public class DrawingExample extends JComponent implements ActionListener {
         // always clear the screen first!
         g.clearRect(0, 0, WIDTH, HEIGHT);
 
-        //Sets the background to that specific colour
-        g.setColor(purple);
-        g.fillRect(0, 0, WIDTH, HEIGHT);
-
         // GAME DRAWING GOES HERE
-        //Sets the colour
-        g.setColor(Color.CYAN);
-
-        //First two are starting point (x, y, width, height)
-        g.fillRect(0, 450, 900, 300);
-
-        // draw anything that is an "oval"
-        g.setColor(Color.YELLOW);
-        g.fillOval(630, 50, 100, 100);
-        //(x,y      x,y)
-        //g.drawLine(680, 40, 680, 10);
-
-        //Draws a polygon
-        g.setColor(Color.LIGHT_GRAY);
-        int[] triangleX = {mouseX, 300, 150};
-        int[] triangleY = {mouseY, 400, 400};
-        //(x positions, y postitions, number of points
-        g.fillPolygon(triangleX, triangleY, 3);
-
-        g.setColor(Color.YELLOW);
-        //(x, y, width, heigt, starting angle, amount to rotate)
-        g.fillArc(450, pacmanY, 150, 150, 45, 270);
+        g.setColor(Color.BLACK);
+        g.fillRect(0, 0, WIDTH, HEIGHT);
+        
+        //Draw the paddles
+        g.setColor(Color.WHITE);
+        g.fillRect(paddel1.x, paddel1.y, paddel1.width, paddel1.height);
+	g.fillRect(paddel2.x, paddel2.y, paddel2.width, paddel2.height);
+        g.fillRect(ball.x, ball.y, ball.width, ball.height);
+        
+        //Draw the score
+        g.setFont(biggerFont);
+        g.drawString("" + score1, WIDTH/2 - 75, 60);
+        g.drawString("" + score2, WIDTH/2 + 50, 60);
 
         // GAME DRAWING ENDS HERE
     }
@@ -119,17 +119,46 @@ public class DrawingExample extends JComponent implements ActionListener {
     // This is run before the game loop begins!
     public void preSetup() {
         // Any of your pre setup before the loop starts should go here
+
     }
 
     // The main game loop
     // In here is where all the logic for my game will go
-    public void gameLoop() {
-        if (moveUp) {
-            pacmanY = pacmanY - 3;
-        } else if (moveDown) {
-            pacmanY = pacmanY + 3;
+    public void gameLoop() {    
+        moveBall();
+        movePaddles();
+        checkForCollision();
+        checkForGoal();
+    }
+
+    private void moveBall() {
+        double newAngle = Math.toRadians((ballAngle));
+        double moveX = ballSpeed*Math.cos(newAngle);
+        double moveY = ballSpeed*Math.sin(newAngle);
+        ball.x = ball.x + (int)moveX;
+        ball.y = ball.y + (int)moveY;
+    }
+
+    private void movePaddles() {
+      
+    }
+    
+    private void checkForCollision() {
+       
+    }
+
+    private void checkForGoal() {
+        if(ball.x < 0){
+            score2++;   
+            ball.x = WIDTH/2 - ball.width/2;
+            ball.y = HEIGHT/2 - ball.height/2;
+        }else if (ball.x > 800){
+            score1++;
+            ball.x = WIDTH/2 - ball.width/2;
+            ball.y = HEIGHT/2 - ball.height/2;
         }
     }
+    
 
     // Used to implement any of the Mouse Actions
     private class Mouse extends MouseAdapter {
@@ -137,24 +166,25 @@ public class DrawingExample extends JComponent implements ActionListener {
         // if a mouse button has been pressed down
         @Override
         public void mousePressed(MouseEvent e) {
-            //Asks where is the mouse    
-            mouseX = e.getX();
-            mouseY = e.getY();
+
         }
 
         // if a mouse button has been released
         @Override
         public void mouseReleased(MouseEvent e) {
+
         }
 
         // if the scroll wheel has been moved
         @Override
         public void mouseWheelMoved(MouseWheelEvent e) {
+
         }
 
         // if the mouse has moved positions
         @Override
         public void mouseMoved(MouseEvent e) {
+
         }
     }
 
@@ -164,25 +194,13 @@ public class DrawingExample extends JComponent implements ActionListener {
         // if a key has been pressed down
         @Override
         public void keyPressed(KeyEvent e) {
-            //Gets the keycode
-            int keyCode = e.getKeyCode();
-            if (keyCode == KeyEvent.VK_W) {
-                moveUp = true;
-            } else if (keyCode == KeyEvent.VK_S) {
-                moveDown = true;
-            }
-        }
-        // if a key has been released
 
+        }
+
+        // if a key has been released
         @Override
         public void keyReleased(KeyEvent e) {
-            //Gets the keycode
-            int keyCode = e.getKeyCode();
-            if (keyCode == KeyEvent.VK_W) {
-                moveUp = false;
-            } else if (keyCode == KeyEvent.VK_S) {
-                moveDown = false;
-            }
+
         }
     }
 
@@ -198,6 +216,7 @@ public class DrawingExample extends JComponent implements ActionListener {
      */
     public static void main(String[] args) {
         // creates an instance of my game
-        DrawingExample game = new DrawingExample();
+        PongExample game = new PongExample();
     }
 }
+
