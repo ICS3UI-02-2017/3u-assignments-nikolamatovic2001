@@ -30,7 +30,7 @@ public class RunnerGame extends JComponent implements ActionListener {
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
     //Title of the window
-    String title = "Basic Geometry Dash";
+    String title = "A Game";
     // sets the framerate and delay for our game
     // this calculates the number of milliseconds per frame
     // you just need to select an approproate framerate
@@ -91,7 +91,7 @@ public class RunnerGame extends JComponent implements ActionListener {
     Rectangle startScreen = new Rectangle(0, 0, WIDTH, HEIGHT);
     int welcomeWidth = 180;
     int welcomeHeight = 200;
-    int titleWidth = 70;
+    int titleWidth = 45;
     int titleHeight = 300;
     int titleEnterWidth = 230;
     int titleEnterHeight = 450;
@@ -103,12 +103,44 @@ public class RunnerGame extends JComponent implements ActionListener {
     Font customFontSmallest = new Font("Comic Sans MS", Font.BOLD, 30);
     int gameOverFontWidth = -1000;
     int gameOverFontHeight = -1000;
-    
     //Mario for the secret level
-    BufferedImage marioGif = loadImage("mario.gif");
-    int marioX = 1000; 
+    BufferedImage mario = loadImage("mario.jpg");
+    int marioX = 1000;
     int marioY = 457;
-    
+    //Blocks for the secret level
+    BufferedImage brickBlock = loadImage("Brick_Block.png");
+    int brickBlockFirstWallX = -1000;
+    int brickBlockFirstWallY = -1000;
+    int brickBlockSecondWallTopX = -1000;
+    int brickBlockSecondWallTopY = -1000;
+    int brickBlockSecondWallBottomX = -1000;
+    int brickBlockSecondWallBottomY = -1000;
+    int brickBlockThirdWallTopX = -1000;
+    int brickBlockThirdWallTopY = -1000;
+    int brickBlockThirdWallBottomX = -1000;
+    int brickBlockThirdWallBottomY = -1000;
+    int brickBlockFourthWallTopX = -1000;
+    int brickBlockFourthWallTopY = -1000;
+    int brickBlockFourthWallBottomX = -1000;
+    int brickBlockFourthWallBottomY = -1000;
+    int brickBlockFifthWallTopX = -1000;
+    int brickBlockFifthWallTopY = -1000;
+    int brickBlockFifthWallMiddleX = -1000;
+    int brickBlockFifthWallMiddleY = -1000;
+    int brickBlockFifthWallBottomX = -1000;
+    int brickBlockFifthWallBottomY = -1000;
+    //Telling the player how to get to te secret level
+    int secretX = -1000;
+    int secretY = -1000;
+    //Floor for the secret level
+    BufferedImage secretFloor = loadImage("floor.png");
+    int secretFloorX = -1000;
+    int secretFloorY = -1000;
+    //Background for the secret level
+    BufferedImage secretBackground = loadImage("Background.png");
+    int secretBackgroundX = -1000;
+    int secretBackgroundY = -1000;
+
     // GAME VARIABLES END HERE    
     // Constructor to create the Frame and place the panel in
     // You will learn more about this in Grade 12 :)
@@ -139,12 +171,12 @@ public class RunnerGame extends JComponent implements ActionListener {
         gameTimer.setRepeats(true);
         gameTimer.start();
     }
-    
-    public BufferedImage loadImage(String name){
+
+    public BufferedImage loadImage(String name) {
         BufferedImage img = null;
-        try{
+        try {
             img = ImageIO.read(new File(name));
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Error loading file");
             e.printStackTrace();
         }
@@ -196,7 +228,12 @@ public class RunnerGame extends JComponent implements ActionListener {
         //Creates the fifth wall
         g.fillRect(wallFive.x, wallFive.y, wallFive.width, wallFive.height);
 
-
+        //Secrtet floor
+        g.drawImage(secretFloor, secretFloorX, secretFloorY, null);  
+        
+        //Secret background
+        g.drawImage(secretBackground, secretBackgroundX, secretBackgroundY, null);
+        
         //Tells player that space is to jump
         g.setColor(Color.YELLOW);
         g.setFont(customFontSmallest);
@@ -205,6 +242,25 @@ public class RunnerGame extends JComponent implements ActionListener {
         //Tells the players score
         g.setColor(Color.WHITE);
         g.drawString("Your Score: " + score, 520, 70);
+       
+        //Drawing mario for secret level
+        g.drawImage(mario, marioX, marioY, null);
+
+        //Drawing brick blocks for the secret level
+        g.drawImage(brickBlock, brickBlockFirstWallX, brickBlockFirstWallY, null);
+        g.drawImage(brickBlock, brickBlockSecondWallTopX, brickBlockSecondWallTopY, null);
+        g.drawImage(brickBlock, brickBlockSecondWallBottomX, brickBlockSecondWallBottomY, null);
+        g.drawImage(brickBlock, brickBlockThirdWallTopX, brickBlockThirdWallTopY, null);
+        g.drawImage(brickBlock, brickBlockThirdWallBottomX, brickBlockThirdWallBottomY, null);
+        g.drawImage(brickBlock, brickBlockFourthWallTopX, brickBlockFourthWallTopY, null);
+        g.drawImage(brickBlock, brickBlockFourthWallBottomX, brickBlockFourthWallBottomY, null);
+        g.drawImage(brickBlock, brickBlockFifthWallTopX, brickBlockFifthWallTopY, null);
+        g.drawImage(brickBlock, brickBlockFifthWallMiddleX, brickBlockFifthWallMiddleY, null);
+        g.drawImage(brickBlock, brickBlockFifthWallBottomX, brickBlockFifthWallBottomY, null);
+
+        //Telling the player how to get to the secret level
+        g.setColor(Color.RED);
+        g.drawString("Press 'M' For A Secret!", secretX, secretY);
 
         //Game over screen
         g.setColor(Color.BLACK);
@@ -223,12 +279,10 @@ public class RunnerGame extends JComponent implements ActionListener {
         g.setFont(customFontBiggest);
         g.drawString("Welcome to", welcomeWidth, welcomeHeight);
         g.setFont(customFontMiddle);
-        g.drawString("'Basic Geometry Dash'!", titleWidth, titleHeight);
+        g.drawString("A Random Game I Made!", titleWidth, titleHeight);
         g.setFont(customFontSmallest);
         g.drawString("Press 'Enter' to Start!", titleEnterWidth, titleEnterHeight);
 
-        //Drawing mario for secret level
-        g.drawImage(marioGif, marioX, marioY, null);
         // GAME DRAWING ENDS HERE
     }
 
@@ -266,40 +320,60 @@ public class RunnerGame extends JComponent implements ActionListener {
         //If it is off screen it goes back to the right hand side of the screen
         if (walls == 1) {
             wallOne.x = wallOne.x - 30;
+            brickBlockFirstWallX = brickBlockFirstWallX - 30;
             if (wallOne.x <= -50) {
                 wallOne.x = 800;
+                brickBlockFirstWallX = 800;
                 walls = 0;
             }
         }
         if (walls == 2) {
             wallTwo.x = wallTwo.x - 30;
+            brickBlockSecondWallTopX = brickBlockSecondWallTopX - 30;
+            brickBlockSecondWallBottomX = brickBlockSecondWallBottomX - 30;
             if (wallTwo.x <= -50) {
                 wallTwo.x = 800;
+                brickBlockSecondWallTopX = 800;
+                brickBlockSecondWallBottomX = 800;
                 walls = 0;
             }
         }
         if (walls == 3) {
             wallThreeTop.x = wallThreeTop.x - 30;
             wallThreeBottom.x = wallThreeBottom.x - 30;
+            brickBlockThirdWallTopX = brickBlockThirdWallTopX - 30;
+            brickBlockThirdWallBottomX = brickBlockThirdWallBottomX - 30;
             if (wallThreeTop.x <= -50 || wallThreeBottom.x <= -50) {
                 wallThreeTop.x = 800;
                 wallThreeBottom.x = 800;
+                brickBlockThirdWallTopX = 800;
+                brickBlockThirdWallBottomX = 800;
                 walls = 0;
             }
         }
         if (walls == 4) {
             wallFourTop.x = wallFourTop.x - 30;
             wallFourBottom.x = wallFourBottom.x - 30;
+            brickBlockFourthWallTopX = brickBlockFourthWallTopX - 30;
+            brickBlockFourthWallBottomX = brickBlockFourthWallBottomX - 30;
             if (wallFourTop.x <= -50) {
                 wallFourTop.x = 800;
                 wallFourBottom.x = 800;
+                brickBlockFourthWallTopX = 800;
+                brickBlockFourthWallBottomX = 800;
                 walls = 0;
             }
         }
         if (walls == 5) {
             wallFive.x = wallFive.x - 30;
+            brickBlockFifthWallTopX = brickBlockFifthWallTopX - 30;
+            brickBlockFifthWallMiddleX = brickBlockFifthWallMiddleX - 30;
+            brickBlockFifthWallBottomX = brickBlockFifthWallBottomX - 30;
             if (wallFive.x <= -50) {
                 wallFive.x = 800;
+                brickBlockFifthWallTopX = 800;
+                brickBlockFifthWallMiddleX = 800;
+                brickBlockFifthWallBottomX = 800;
                 walls = 0;
             }
         }
@@ -311,6 +385,7 @@ public class RunnerGame extends JComponent implements ActionListener {
             //Creates a rng generator, highest number 7, lowest is 1
             Random rng = new Random();
             walls = rng.nextInt(5) + 1;
+            System.out.println("" + walls);
             //'resets' the timer
             timerStart = System.currentTimeMillis();
         }
@@ -345,13 +420,27 @@ public class RunnerGame extends JComponent implements ActionListener {
         if (!(player.x + player.width < x || player.x > x + 50 || player.y + player.height < y || player.y > y + height)) {
             drawGameOver = true;
             if (drawGameOver == true) {
+                //Draws the game screen
                 gameOver.width = WIDTH;
                 gameOver.height = HEIGHT;
                 gameOverFontWidth = WIDTH / 4;
                 gameOverFontHeight = HEIGHT / 2 - 100;
                 finalScoreWidth = 250;
                 finalScoreHeight = 400;
+                //Moves the secret level off screen so you don't see it
                 marioX = 1000;
+                brickBlockFirstWallX = -1000;
+                brickBlockSecondWallTopX = -1000;
+                brickBlockSecondWallBottomX = -1000;
+                brickBlockThirdWallTopX = -1000;
+                brickBlockThirdWallBottomX = -1000;
+                brickBlockFourthWallTopX = -1000;
+                brickBlockFourthWallBottomX = -1000;
+                brickBlockFifthWallTopX = -1000;
+                brickBlockFifthWallMiddleX = -1000;
+                brickBlockFifthWallBottomX = -1000;
+                secretX = -1000;
+                secretY = -1000;
                 scoreStop = true;
             }
         }
@@ -391,6 +480,10 @@ public class RunnerGame extends JComponent implements ActionListener {
         collision(wallFourTop.x, wallFourTop.y, wallFourTop.height);
         collision(wallFourBottom.x, wallFourBottom.y, wallFourBottom.height);
         collision(wallFive.x, wallFive.y, wallFive.height);
+        if (score >= 30) {
+            secretX = 230;
+            secretY = 550;
+        }
     }
     // Used to implement any of the Mouse Actions
 
@@ -458,8 +551,35 @@ public class RunnerGame extends JComponent implements ActionListener {
                 triangleTwoX = 100;
                 triangleThreeX = 130;
                 marioX = 1000;
+                brickBlockFirstWallX = -1000;
+                brickBlockFirstWallY = -1000;
+                brickBlockSecondWallTopX = -1000;
+                brickBlockSecondWallTopY = -1000;
+                brickBlockSecondWallBottomX = -1000;
+                brickBlockSecondWallBottomY = -1000;
+                brickBlockThirdWallTopX = -1000;
+                brickBlockThirdWallTopY = -1000;
+                brickBlockThirdWallBottomX = -1000;
+                brickBlockThirdWallBottomY = -1000;
+                brickBlockFourthWallTopX = -1000;
+                brickBlockFourthWallTopY = -1000;
+                brickBlockFourthWallBottomX = -1000;
+                brickBlockFourthWallBottomY = -1000;
+                brickBlockFifthWallTopX = -1000;
+                brickBlockFifthWallTopY = -1000;
+                brickBlockFifthWallMiddleX = -1000;
+                brickBlockFifthWallMiddleY = -1000;
+                brickBlockFifthWallBottomX = -1000;
+                brickBlockFifthWallBottomY = -1000;
+                secretX = -1000;
+                secretY = -1000;
+                secretBackgroundX = -1000;
+                secretBackgroundY = -1000;
+                secretFloorX = -1000;
+                secretFloorY = -1000;
                 scoreStop = false;
             }
+            //if M was pressed the game resets/starts as the secret level
             if (keyCode == KeyEvent.VK_M) {
                 gameOver.width = -1000;
                 gameOver.height = -1000;
@@ -488,6 +608,32 @@ public class RunnerGame extends JComponent implements ActionListener {
                 triangleTwoX = 1000;
                 triangleThreeX = 1000;
                 marioX = 90;
+                brickBlockFirstWallX = wallOne.x;
+                brickBlockFirstWallY = wallOne.y;
+                brickBlockSecondWallTopX = wallTwo.x;
+                brickBlockSecondWallTopY = wallTwo.y;
+                brickBlockSecondWallBottomX = wallTwo.x;
+                brickBlockSecondWallBottomY = wallTwo.y + 50;
+                brickBlockThirdWallTopX = wallThreeTop.x;
+                brickBlockThirdWallTopY = wallThreeTop.y;
+                brickBlockThirdWallBottomX = wallThreeBottom.x;
+                brickBlockThirdWallBottomY = wallThreeBottom.y;
+                brickBlockFourthWallTopX = wallFourTop.x;
+                brickBlockFourthWallTopY = wallFourTop.y;
+                brickBlockFourthWallBottomX = wallFourBottom.x;
+                brickBlockFourthWallBottomY = wallFourBottom.y;
+                brickBlockFifthWallTopX = wallFive.x;
+                brickBlockFifthWallTopY = wallFive.y;
+                brickBlockFifthWallMiddleX = wallFive.x;
+                brickBlockFifthWallMiddleY = wallFive.y + 50;
+                brickBlockFifthWallBottomX = wallFive.x;
+                brickBlockFifthWallBottomY = wallFive.y + 100;
+                secretX = -1000;
+                secretY = -1000;
+                secretBackgroundX = 0;
+                secretBackgroundY = 0;
+                secretFloorX = 0;
+                secretFloorY = 150;
                 scoreStop = false;
             }
         }

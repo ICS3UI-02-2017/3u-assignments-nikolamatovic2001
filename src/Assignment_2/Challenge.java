@@ -18,14 +18,14 @@ public class Challenge {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         // Create a City for the Robot
         City nm = new City();
-        
+
         // put a robot in nm
         RobotSE rob1 = new RobotSE(nm, 0, 3, Direction.SOUTH);
         RobotSE rob2 = new RobotSE(nm, 0, 3, Direction.SOUTH);
-        
-        
+
+
     }
 }

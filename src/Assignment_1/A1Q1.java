@@ -20,13 +20,13 @@ public class A1Q1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         // Create a city
-        City nm = new City ();
-        
+        City nm = new City();
+
         // Create a robot in the city
         RobotSE rob = new RobotSE(nm, 0, 2, Direction.WEST);
-        
+
         // Create the box as shown in the assignment in classroom
         new Wall(nm, 1, 1, Direction.WEST);
         new Wall(nm, 2, 1, Direction.SOUTH);
@@ -36,31 +36,31 @@ public class A1Q1 {
         new Wall(nm, 2, 2, Direction.EAST);
         new Wall(nm, 2, 1, Direction.WEST);
         new Wall(nm, 2, 2, Direction.SOUTH);
-        
+
         // move the robot forwards two spaces
         rob.move(2);
-        
+
         // turn the robot left once
         rob.turnLeft();
-        
+
         // move forward three spaces
         rob.move(3);
-        
+
         // turn left once
         rob.turnLeft();
-        
-         // move forward three spaces
-        rob.move(3);
-        
-        // turn left once
-        rob.turnLeft();
-        
+
         // move forward three spaces
         rob.move(3);
-        
+
         // turn left once
         rob.turnLeft();
-        
+
+        // move forward three spaces
+        rob.move(3);
+
+        // turn left once
+        rob.turnLeft();
+
         // move forward one space
         rob.move();
     }

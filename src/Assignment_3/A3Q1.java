@@ -19,13 +19,13 @@ public class A3Q1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
+
         // create a city for the robot
         City nm = new City();
-        
+
         // put a robot in nm
         RobotSE rob = new RobotSE(nm, 0, 2, Direction.WEST);
-        
+
         //create a square in the city
         new Wall(nm, 1, 1, Direction.NORTH);
         new Wall(nm, 1, 1, Direction.WEST);
@@ -35,9 +35,9 @@ public class A3Q1 {
         new Wall(nm, 1, 2, Direction.EAST);
         new Wall(nm, 2, 2, Direction.SOUTH);
         new Wall(nm, 2, 2, Direction.EAST);
-        
+
         //loops the command four times, rob moves around the square
-        for(int loop = 0; loop < 4; loop++){
+        for (int loop = 0; loop < 4; loop++) {
             rob.move(2);
             rob.turnLeft();
             rob.move(3);

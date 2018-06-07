@@ -20,13 +20,13 @@ public class A2Q1P {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         //Create a city
-        City nm = new City ();
-        
+        City nm = new City();
+
         //Create a robot in the city
         RobotSE rob = new RobotSE(nm, 1, 1, Direction.EAST);
-        
+
         //Creating 10 things in a line
         new Thing(nm, 1, 2, Direction.EAST);
         new Thing(nm, 1, 3, Direction.EAST);
@@ -38,28 +38,25 @@ public class A2Q1P {
         new Thing(nm, 1, 9, Direction.EAST);
         new Thing(nm, 1, 10, Direction.EAST);
         new Thing(nm, 1, 11, Direction.EAST);
-         
-        
-        
+
+
+
         //moves rob forward once
         rob.move();
-       
+
         // rob will check to see if he has less the 7 things in his backpack
-        while(rob.countThingsInBackpack() < 7){
-      
-        // rob picks up thing and moves forward one
-        rob.pickThing();
-        rob.move();
-       
-        // rob will check to see if he has less the 7 things in his backpack
-        if(rob.countThingsInBackpack() == 7){
-            
-        rob.move(3);
-         
-             }
-           }
-         }
-       }
-    
-      
-    
+        while (rob.countThingsInBackpack() < 7) {
+
+            // rob picks up thing and moves forward one
+            rob.pickThing();
+            rob.move();
+
+            // rob will check to see if he has less the 7 things in his backpack
+            if (rob.countThingsInBackpack() == 7) {
+
+                rob.move(3);
+
+            }
+        }
+    }
+}
