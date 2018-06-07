@@ -229,11 +229,11 @@ public class RunnerGame extends JComponent implements ActionListener {
         g.fillRect(wallFive.x, wallFive.y, wallFive.width, wallFive.height);
 
         //Secrtet floor
-        g.drawImage(secretFloor, secretFloorX, secretFloorY, null);  
-        
+        g.drawImage(secretFloor, secretFloorX, secretFloorY, null);
+
         //Secret background
         g.drawImage(secretBackground, secretBackgroundX, secretBackgroundY, null);
-        
+
         //Tells player that space is to jump
         g.setColor(Color.YELLOW);
         g.setFont(customFontSmallest);
@@ -242,7 +242,7 @@ public class RunnerGame extends JComponent implements ActionListener {
         //Tells the players score
         g.setColor(Color.WHITE);
         g.drawString("Your Score: " + score, 520, 70);
-       
+
         //Drawing mario for secret level
         g.drawImage(mario, marioX, marioY, null);
 
@@ -480,6 +480,7 @@ public class RunnerGame extends JComponent implements ActionListener {
         collision(wallFourTop.x, wallFourTop.y, wallFourTop.height);
         collision(wallFourBottom.x, wallFourBottom.y, wallFourBottom.height);
         collision(wallFive.x, wallFive.y, wallFive.height);
+        //If score is equal to or greater then 30, it tells the player how to go to the secret level
         if (score >= 30) {
             secretX = 230;
             secretY = 550;
