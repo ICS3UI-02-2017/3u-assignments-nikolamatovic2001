@@ -485,7 +485,7 @@ public class RunnerGame extends JComponent implements ActionListener {
         //Only happens when it is in the normal mode, not the secret mode
         if(wasMpressed == false){
         //If score is equal to or greater then 30, it tells the player how to go to the secret level
-        if (score >= 2) {
+        if (score >= 30) {
             secretX = 230;
             secretY = 550;
         }
