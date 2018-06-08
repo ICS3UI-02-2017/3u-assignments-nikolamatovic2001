@@ -103,6 +103,8 @@ public class RunnerGame extends JComponent implements ActionListener {
     Font customFontSmallest = new Font("Comic Sans MS", Font.BOLD, 30);
     int gameOverFontWidth = -1000;
     int gameOverFontHeight = -1000;
+    //Boolean to not show how to get to the secret level if already in the secret level
+    boolean wasMpressed = false;
     //Mario for the secret level
     BufferedImage mario = loadImage("mario.jpg");
     int marioX = 1000;
@@ -480,11 +482,14 @@ public class RunnerGame extends JComponent implements ActionListener {
         collision(wallFourTop.x, wallFourTop.y, wallFourTop.height);
         collision(wallFourBottom.x, wallFourBottom.y, wallFourBottom.height);
         collision(wallFive.x, wallFive.y, wallFive.height);
+        //Only happens when it is in the normal mode, not the secret mode
+        if(wasMpressed == false){
         //If score is equal to or greater then 30, it tells the player how to go to the secret level
-        if (score >= 30) {
+        if (score >= 2) {
             secretX = 230;
             secretY = 550;
         }
+      }
     }
     // Used to implement any of the Mouse Actions
 
@@ -578,6 +583,7 @@ public class RunnerGame extends JComponent implements ActionListener {
                 secretBackgroundY = -1000;
                 secretFloorX = -1000;
                 secretFloorY = -1000;
+                wasMpressed = false;
                 scoreStop = false;
             }
             //if M was pressed the game resets/starts as the secret level
@@ -635,6 +641,7 @@ public class RunnerGame extends JComponent implements ActionListener {
                 secretBackgroundY = 0;
                 secretFloorX = 0;
                 secretFloorY = 150;
+                wasMpressed = true;
                 scoreStop = false;
             }
         }
