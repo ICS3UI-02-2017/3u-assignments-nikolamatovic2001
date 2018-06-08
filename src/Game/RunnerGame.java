@@ -382,7 +382,7 @@ public class RunnerGame extends JComponent implements ActionListener {
     public void rng() {
         //Uses a timer of 1.5 seconds to randomly generate a number to move the walls
         if (System.currentTimeMillis() > timerStart + delay) {
-            //Creates a rng generator, highest number 7, lowest is 1
+            //Creates a rng generator, highest number 5, lowest is 1
             Random rng = new Random();
             walls = rng.nextInt(5) + 1;
             System.out.println("" + walls);
