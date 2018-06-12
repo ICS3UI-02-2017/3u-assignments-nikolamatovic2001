@@ -21,7 +21,6 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 
 /**
- *
  * @author maton0870
  */
 public class RunnerGame extends JComponent implements ActionListener {
@@ -61,13 +60,13 @@ public class RunnerGame extends JComponent implements ActionListener {
     int walls = 0;
     int checkIfTheSame = 0;
     //Creates the wall obstacles
-    Rectangle wallOne = new Rectangle(800, 450, 50, 50);
-    Rectangle wallTwo = new Rectangle(800, 400, 50, 100);
-    Rectangle wallThreeBottom = new Rectangle(800, 450, 50, 50);
-    Rectangle wallThreeTop = new Rectangle(800, 300, 50, 50);
-    Rectangle wallFourTop = new Rectangle(800, 350, 50, 50);
-    Rectangle wallFourBottom = new Rectangle(800, 450, 50, 50);
-    Rectangle wallFive = new Rectangle(800, 300, 50, 150);
+    Rectangle wallOne = new Rectangle(WIDTH, 450, 50, 50);
+    Rectangle wallTwo = new Rectangle(WIDTH, 400, 50, 100);
+    Rectangle wallThreeBottom = new Rectangle(WIDTH, 450, 50, 50);
+    Rectangle wallThreeTop = new Rectangle(WIDTH, 300, 50, 50);
+    Rectangle wallFourTop = new Rectangle(WIDTH, 350, 50, 50);
+    Rectangle wallFourBottom = new Rectangle(WIDTH, 450, 50, 50);
+    Rectangle wallFive = new Rectangle(WIDTH, 300, 50, 150);
     //Jump commands
     boolean moveUp = false;
     boolean moveDown = false;
@@ -149,7 +148,6 @@ public class RunnerGame extends JComponent implements ActionListener {
     public RunnerGame() {
         // creates a windows to show my game
         JFrame frame = new JFrame(title);
-
         // sets the size of my game
         this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         // adds the game to the window
@@ -217,7 +215,6 @@ public class RunnerGame extends JComponent implements ActionListener {
 
         //Creates the second wall
         g.fillRect(wallTwo.x, wallTwo.y, wallTwo.width, wallTwo.height);
-
 
         //Creates the third wall
         g.fillRect(wallThreeTop.x, wallThreeTop.y, wallThreeTop.width, wallThreeTop.height);
@@ -321,61 +318,61 @@ public class RunnerGame extends JComponent implements ActionListener {
         //Moves the walls towards the left if their number is randomly generated
         //If it is off screen it goes back to the right hand side of the screen
         if (walls == 1) {
-            wallOne.x = wallOne.x - 30;
-            brickBlockFirstWallX = brickBlockFirstWallX - 30;
+            wallOne.x = wallOne.x - 20;
+            brickBlockFirstWallX = brickBlockFirstWallX - 20;
             if (wallOne.x <= -50) {
-                wallOne.x = 800;
-                brickBlockFirstWallX = 800;
+                wallOne.x = WIDTH;
+                brickBlockFirstWallX = WIDTH;
                 walls = 0;
             }
         }
         if (walls == 2) {
-            wallTwo.x = wallTwo.x - 30;
-            brickBlockSecondWallTopX = brickBlockSecondWallTopX - 30;
-            brickBlockSecondWallBottomX = brickBlockSecondWallBottomX - 30;
+            wallTwo.x = wallTwo.x - 20;
+            brickBlockSecondWallTopX = brickBlockSecondWallTopX - 20;
+            brickBlockSecondWallBottomX = brickBlockSecondWallBottomX - 20;
             if (wallTwo.x <= -50) {
-                wallTwo.x = 800;
-                brickBlockSecondWallTopX = 800;
-                brickBlockSecondWallBottomX = 800;
+                wallTwo.x = WIDTH;
+                brickBlockSecondWallTopX = WIDTH;
+                brickBlockSecondWallBottomX = WIDTH;
                 walls = 0;
             }
         }
         if (walls == 3) {
-            wallThreeTop.x = wallThreeTop.x - 30;
-            wallThreeBottom.x = wallThreeBottom.x - 30;
-            brickBlockThirdWallTopX = brickBlockThirdWallTopX - 30;
-            brickBlockThirdWallBottomX = brickBlockThirdWallBottomX - 30;
+            wallThreeTop.x = wallThreeTop.x - 20;
+            wallThreeBottom.x = wallThreeBottom.x - 20;
+            brickBlockThirdWallTopX = brickBlockThirdWallTopX - 20;
+            brickBlockThirdWallBottomX = brickBlockThirdWallBottomX - 20;
             if (wallThreeTop.x <= -50 || wallThreeBottom.x <= -50) {
-                wallThreeTop.x = 800;
-                wallThreeBottom.x = 800;
-                brickBlockThirdWallTopX = 800;
-                brickBlockThirdWallBottomX = 800;
+                wallThreeTop.x = WIDTH;
+                wallThreeBottom.x = WIDTH;
+                brickBlockThirdWallTopX = WIDTH;
+                brickBlockThirdWallBottomX = WIDTH;
                 walls = 0;
             }
         }
         if (walls == 4) {
-            wallFourTop.x = wallFourTop.x - 30;
-            wallFourBottom.x = wallFourBottom.x - 30;
-            brickBlockFourthWallTopX = brickBlockFourthWallTopX - 30;
-            brickBlockFourthWallBottomX = brickBlockFourthWallBottomX - 30;
+            wallFourTop.x = wallFourTop.x - 20;
+            wallFourBottom.x = wallFourBottom.x - 20;
+            brickBlockFourthWallTopX = brickBlockFourthWallTopX - 20;
+            brickBlockFourthWallBottomX = brickBlockFourthWallBottomX - 20;
             if (wallFourTop.x <= -50) {
-                wallFourTop.x = 800;
-                wallFourBottom.x = 800;
-                brickBlockFourthWallTopX = 800;
-                brickBlockFourthWallBottomX = 800;
+                wallFourTop.x = WIDTH;
+                wallFourBottom.x = WIDTH;
+                brickBlockFourthWallTopX = WIDTH;
+                brickBlockFourthWallBottomX = WIDTH;
                 walls = 0;
             }
         }
         if (walls == 5) {
-            wallFive.x = wallFive.x - 30;
-            brickBlockFifthWallTopX = brickBlockFifthWallTopX - 30;
-            brickBlockFifthWallMiddleX = brickBlockFifthWallMiddleX - 30;
-            brickBlockFifthWallBottomX = brickBlockFifthWallBottomX - 30;
+            wallFive.x = wallFive.x - 20;
+            brickBlockFifthWallTopX = brickBlockFifthWallTopX - 20;
+            brickBlockFifthWallMiddleX = brickBlockFifthWallMiddleX - 20;
+            brickBlockFifthWallBottomX = brickBlockFifthWallBottomX - 20;
             if (wallFive.x <= -50) {
-                wallFive.x = 800;
-                brickBlockFifthWallTopX = 800;
-                brickBlockFifthWallMiddleX = 800;
-                brickBlockFifthWallBottomX = 800;
+                wallFive.x = WIDTH;
+                brickBlockFifthWallTopX = WIDTH;
+                brickBlockFifthWallMiddleX = WIDTH;
+                brickBlockFifthWallBottomX = WIDTH;
                 walls = 0;
             }
         }
@@ -383,6 +380,7 @@ public class RunnerGame extends JComponent implements ActionListener {
 
     public void rng() {
         //Uses a timer of 1.5 seconds to randomly generate a number to move the walls
+
         if (System.currentTimeMillis() > timerStart + delay) {
             //Creates a rng generator, highest number 5, lowest is 1
             Random rng = new Random();
@@ -483,13 +481,13 @@ public class RunnerGame extends JComponent implements ActionListener {
         collision(wallFourBottom.x, wallFourBottom.y, wallFourBottom.height);
         collision(wallFive.x, wallFive.y, wallFive.height);
         //Only happens when it is in the normal mode, not the secret mode
-        if(wasMpressed == false){
-        //If score is equal to or greater then 30, it tells the player how to go to the secret level
-        if (score >= 30) {
-            secretX = 230;
-            secretY = 550;
+        if (wasMpressed == false) {
+            //If score is equal to or greater then 30, it tells the player how to go to the secret level
+            if (score >= 30) {
+                secretX = 230;
+                secretY = 550;
+            }
         }
-      }
     }
     // Used to implement any of the Mouse Actions
 
@@ -545,13 +543,13 @@ public class RunnerGame extends JComponent implements ActionListener {
                 finalScoreWidth = -1000;
                 finalScoreHeight = -1000;
                 score = 0;
-                wallOne.x = 800;
-                wallTwo.x = 800;
-                wallThreeTop.x = 800;
-                wallThreeBottom.x = 800;
-                wallFourTop.x = 800;
-                wallFourBottom.x = 800;
-                wallFive.x = 800;
+                wallOne.x = WIDTH;
+                wallTwo.x = WIDTH;
+                wallThreeTop.x = WIDTH;
+                wallThreeBottom.x = WIDTH;
+                wallFourTop.x = WIDTH;
+                wallFourBottom.x = WIDTH;
+                wallFive.x = WIDTH;
                 walls = 0;
                 triangleOneX = 115;
                 triangleTwoX = 100;
@@ -603,13 +601,13 @@ public class RunnerGame extends JComponent implements ActionListener {
                 finalScoreWidth = -1000;
                 finalScoreHeight = -1000;
                 score = 0;
-                wallOne.x = 800;
-                wallTwo.x = 800;
-                wallThreeTop.x = 800;
-                wallThreeBottom.x = 800;
-                wallFourTop.x = 800;
-                wallFourBottom.x = 800;
-                wallFive.x = 800;
+                wallOne.x = WIDTH;
+                wallTwo.x = WIDTH;
+                wallThreeTop.x = WIDTH;
+                wallThreeBottom.x = WIDTH;
+                wallFourTop.x = WIDTH;
+                wallFourBottom.x = WIDTH;
+                wallFive.x = WIDTH;
                 walls = 0;
                 triangleOneX = 1000;
                 triangleTwoX = 1000;
@@ -664,12 +662,12 @@ public class RunnerGame extends JComponent implements ActionListener {
         gameLoop();
         repaint();
     }
-
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // creates an instance of my game
-        RunnerGame game = new RunnerGame();
+        // The name of the file to open
+        RunnerGame game = new RunnerGame();      
     }
 }
