@@ -69,7 +69,6 @@ public class RunnerGame extends JComponent implements ActionListener {
     Rectangle wallFive = new Rectangle(WIDTH, 300, 50, 150);
     //Jump commands
     boolean moveUp = false;
-    boolean moveDown = false;
     //When did we last do sommething
     long timerStart = 0;
     long timerStart2 = 0;
@@ -306,11 +305,6 @@ public class RunnerGame extends JComponent implements ActionListener {
             triangleTwoAndThreeY = triangleTwoAndThreeY - 20;
             player.y = player.y - 20;
             marioY = marioY - 20;
-        } else if (moveDown) {
-            triangleOneY = triangleOneY + 20;
-            triangleTwoAndThreeY = triangleTwoAndThreeY + 20;
-            player.y = player.y + 20;
-            marioY = marioY + 20;
         }
     }
 
@@ -385,7 +379,6 @@ public class RunnerGame extends JComponent implements ActionListener {
             //Creates a rng generator, highest number 5, lowest is 1
             Random rng = new Random();
             walls = rng.nextInt(5) + 1;
-            System.out.println("" + walls);
             //'resets' the timer
             timerStart = System.currentTimeMillis();
         }
@@ -651,7 +644,6 @@ public class RunnerGame extends JComponent implements ActionListener {
             //if space was released the player falls
             if (keyCode == KeyEvent.VK_SPACE) {
                 moveUp = false;
-                moveDown = true;
             }
         }
     }
@@ -662,12 +654,12 @@ public class RunnerGame extends JComponent implements ActionListener {
         gameLoop();
         repaint();
     }
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // The name of the file to open
-        RunnerGame game = new RunnerGame();      
+        RunnerGame game = new RunnerGame();
     }
 }
