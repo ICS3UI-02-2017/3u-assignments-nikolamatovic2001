@@ -455,17 +455,31 @@ public class RunnerGame extends JComponent implements ActionListener {
             }
         }
     }
+    
+    public void secretMessage(){
+        //Only happens when it is in the normal mode, not the secret mode
+        if (wasMpressed == false) {
+            //If score is equal to or greater then 20, it tells the player how to go to the secret level
+            if (score >= 20) {
+                secretX = 230;
+                secretY = 550;
+            }
+        }
+    }
+    
     // The main game loop
     // In here is where all the logic for my game will go
 
     public void gameLoop() {
         //All the methods are running, their names say what they do
+        //For more in depth comments go to the actual function location
         screenMovement();
         rng();
         charMovement();
         wallMovement();
         jumpWithGravity();
         score();
+        secretMessage();
         collision(wallOne.x, wallOne.y, wallOne.height);
         collision(wallTwo.x, wallTwo.y, wallTwo.height);
         collision(wallThreeTop.x, wallThreeTop.y, wallThreeTop.height);
@@ -473,14 +487,6 @@ public class RunnerGame extends JComponent implements ActionListener {
         collision(wallFourTop.x, wallFourTop.y, wallFourTop.height);
         collision(wallFourBottom.x, wallFourBottom.y, wallFourBottom.height);
         collision(wallFive.x, wallFive.y, wallFive.height);
-        //Only happens when it is in the normal mode, not the secret mode
-        if (wasMpressed == false) {
-            //If score is equal to or greater then 30, it tells the player how to go to the secret level
-            if (score >= 30) {
-                secretX = 230;
-                secretY = 550;
-            }
-        }
     }
     // Used to implement any of the Mouse Actions
 
