@@ -226,7 +226,7 @@ public class RunnerGame extends JComponent implements ActionListener {
         //Creates the fifth wall
         g.fillRect(wallFive.x, wallFive.y, wallFive.width, wallFive.height);
 
-        //Secrtet floor
+        //Secret floor
         g.drawImage(secretFloor, secretFloorX, secretFloorY, null);
 
         //Secret background
@@ -374,7 +374,6 @@ public class RunnerGame extends JComponent implements ActionListener {
 
     public void rng() {
         //Uses a timer of 1.5 seconds to randomly generate a number to move the walls
-
         if (System.currentTimeMillis() > timerStart + delay) {
             //Creates a rng generator, highest number 5, lowest is 1
             Random rng = new Random();
