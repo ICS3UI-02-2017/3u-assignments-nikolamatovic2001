@@ -640,6 +640,10 @@ public class RunnerGame extends JComponent implements ActionListener {
                 wasMpressed = true;
                 scoreStop = false;
             }
+            //If the escpae key is pressed it closes the window
+            if(keyCode == KeyEvent.VK_ESCAPE){
+                System.exit(0);
+            }
         }
 
         // if a key has been released
