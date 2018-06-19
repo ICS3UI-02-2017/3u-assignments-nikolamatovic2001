@@ -310,7 +310,7 @@ public class RunnerGame extends JComponent implements ActionListener {
 
     public void wallMovement() {
         //Moves the walls towards the left if their number is randomly generated
-        //If it is off screen it goes back to the right hand side of the screen
+        //If it is off screen it goes back to the right hand side of the screen and stops
         if (walls == 1) {
             wallOne.x = wallOne.x - 20;
             brickBlockFirstWallX = brickBlockFirstWallX - 20;
@@ -420,7 +420,7 @@ public class RunnerGame extends JComponent implements ActionListener {
                 finalScoreWidth = 250;
                 finalScoreHeight = 400;
                 //Moves the secret level off screen so you don't see it
-                marioX = 1000;
+                marioX = -1000;
                 brickBlockFirstWallX = -1000;
                 brickBlockSecondWallTopX = -1000;
                 brickBlockSecondWallBottomX = -1000;
